@@ -7,7 +7,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh """
-                python ./hello_world.py --data $TELEGRAM
+                python ./hello_world.py --data '$TELEGRAM'
                 """
             }
         }
