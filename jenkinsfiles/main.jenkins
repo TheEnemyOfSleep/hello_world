@@ -5,7 +5,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'credTelegram', variable: 'TELEGRAM')]) {
                     sh """
-                    'python ./hello_world.py --data bruh'
+                    python ./hello_world.py --data bruh
                     """
                 }
             }
