@@ -1,5 +1,6 @@
 #!groovy
-properties([disableConcurrentBuilds()])
+/* groovylint-disable-next-line CompileStatic */
+properties([disableConcurrentBuilds])
 
 pipeline {
     agent { docker { image 'python:3.5.1' } }
