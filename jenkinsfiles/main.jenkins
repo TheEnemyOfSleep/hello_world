@@ -1,7 +1,9 @@
 pipeline {
     agent { docker { image 'python:3.8.1' } }
     parameters {
-        password(name: 'DATA', defaultValue: '', description: 'Data')
+        string(name: 'DATA', defaultValue: '', description: 'Data')
+        string(name: 'SMTP', defaultValue: '', description: 'SMTP params')
+        string(name: 'TELEGRAM', defaultValue: '', description: 'TELEGRAM params')
     }
     stages {
         stage('Test') {
