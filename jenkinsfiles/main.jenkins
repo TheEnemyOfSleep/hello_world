@@ -1,13 +1,13 @@
 pipeline {
     agent { docker { image 'python:3.8.1' } }
     parameters {
-        password(name: 'TELEGRAM', defaultValue: '', description: 'Slack Token')
+        password(name: 'DATA', defaultValue: '', description: 'Data')
     }
     stages {
         stage('Test') {
             steps {
                 sh """
-                python ./hello_world.py --data ${params.TELEGRAM}
+                python ./hello_world.py --data ${params.DATA}
                 """
             }
         }
