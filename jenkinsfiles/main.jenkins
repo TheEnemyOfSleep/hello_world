@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                withCredentials([string(credentialsId: 'credTelegram', variable: 'USERNAME')]) {
+                withCredentials([string(credentialsId: 'credTelegram', variable: 'TELEGRAM')]) {
                     sh """
                     'python ./hello_world.py --data $TELEGRAM'
                     """
