@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                withCredentials([string(credentials: 'credTelegram', variable: 'TELEGRAM')])
-                sh 'python ./hello_world.py --data $TELEGRAM'
+                withCredentials([string(credentials: 'credTelegram', variable: 'TELEGRAM')]) {
+                    sh 'python ./hello_world.py --data $TELEGRAM'
+                }
             }
         }
     }
