@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { image 'python:3.8.1' } }
-    environment {
-        TELEGRAM = credentials('credTelegram')
+    parameters {
+        password(name: 'TELEGRAM', defaultValue: '', description: 'Slack Token')
     }
     stages {
         stage('Test') {
